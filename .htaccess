@@ -7,12 +7,12 @@ RewriteRule ^(.*) index.php [QSA,L]
 
 ###-----------------------------------
 ### nginx
-# rewrite ^/(?!.well-known)(.*)$ /index.php?/$1 last;
+rewrite ^/(?!.well-known)(.*)$ /index.php?/$1 last;
 #
 ### nginx Subdirectory 在子目录中使用
-# location /OneManager2/ {
-#  rewrite ^/(.*)$ /OneManager2/index.php?/$1 last;
-# }
+location /OneManager2/ {
+rewrite ^/(.*)$ /OneManager2/index.php?/$1 last;
+}
 #
 ### caddy
 # rewrite {
